@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="LibsProtege/ca.uvic.cs.chisel.cajun.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/guava.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.coode.annotate.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.coode.dlquery.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.coode.matrix.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.coode.owlviz.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.editor.owl.codegeneration.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.editor.owl.diff.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.editor.owl.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.editor.owl.rdf.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.explanation.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.integration.hermit.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.ontograf.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.owl.diff.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.protege.owl.rdf.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/org.semanticweb.HermiT.jar"/>
+	<classpathentry kind="lib" path="LibsProtege/owlapi-distribution.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
