@@ -8,9 +8,9 @@ Serious game based on ontology.
 * *LibsProtege* : *.jar copied from Protege, imported in project.
 	
 ## Use Protege to generate Java code:
-..1. *Output folder* : AgileDoctor/src
-..2. *Java package* : model
-..3. *Factory class name* : MyFactory
+1. *Output folder* : **AgileDoctor/src**
+2. *Java package* : **model**
+3. *Factory class name* : **MyFactory**
 
 ## Package definition:
 * *model* : Protege generating model code, can't be modified manually.
