@@ -9,7 +9,7 @@ public class TestMain {
 		List<ITestCase> testcases = new ArrayList<ITestCase>();
 		// prepare test cases.
 		testcases.add(new IndividualCrudInRam());
-		
+		testcases.add(new UseReasoner());
 		// launch test cases.
 		for(ITestCase i: testcases){
 			System.out.println("==Test case: " + i.getClass().getName());

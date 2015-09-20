@@ -1,21 +1,11 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
-<rdf:RDF xmlns="http://www.semanticweb.org/serene/ontologies/2015/7/untitled-ontology-10#"
-     xml:base="http://www.semanticweb.org/serene/ontologies/2015/7/untitled-ontology-10"
+<rdf:RDF xmlns="owlapi:ontology:ont1#"
+     xml:base="owlapi:ontology:ont1"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor"/>
+    <owl:Ontology rdf:about="owlapi:ontology:ont1"/>
     
 
 
@@ -107,12 +97,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Confirmation">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Answer_Without_Information"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Consultation_Session -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Consultation_Session"/>
     
 
 
@@ -343,25 +327,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#work">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#ask_for_health_certification"/>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Jing -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Jing">
-        <rdf:type rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Child"/>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 

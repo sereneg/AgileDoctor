@@ -22,6 +22,8 @@ public class IndividualCrudInRam implements ITestCase {
 	private File fClass;
 	// the ontology
 	private OWLOntology ontology;
+	// ontology for Abox, Tbox, Rbox
+	private OWLOntology ontlgAbox, ontlgTbox, ontlgRbox;
 	// Factory
 	private MyFactory factory;
 
@@ -46,6 +48,8 @@ public class IndividualCrudInRam implements ITestCase {
 	public boolean test() {
 		// Check if the ontology contains any axioms
 		System.out.println("Number of axioms: " + ontology.getAxiomCount());
+		// Every ontology has a unique ID.
+		System.out.println("Current Ontology ID: " + ontology.getOntologyID());
 		// test of CRUD
 		// test of Create
 		System.out.println("Number of children: " + factory.getAllChildInstances().size());
@@ -60,6 +64,24 @@ public class IndividualCrudInRam implements ITestCase {
 		// test of Delete
 		c.delete();
 		System.out.println("Number of children: " + factory.getAllChildInstances().size());
+		
+		// save ABox, TBox, RBox to separate files.
+		try {
+			ontlgAbox = manager.createOntology(ontology.getABoxAxioms(true));
+			ontlgTbox = manager.createOntology(ontology.getTBoxAxioms(true));
+			ontlgRbox = manager.createOntology(ontology.getRBoxAxioms(true));
+		} catch (OWLOntologyCreationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			manager.saveOntology(ontlgAbox, IRI.create(new File("individual/Abox.owl")));
+			manager.saveOntology(ontlgTbox, IRI.create(new File("individual/Tbox.owl")));
+			manager.saveOntology(ontlgRbox, IRI.create(new File("individual/Rbox.owl")));
+		} catch (OWLOntologyStorageException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
 	}
 
