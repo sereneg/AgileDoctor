@@ -18,6 +18,15 @@
 	<classpathentry kind="lib" path="LibsProtege/org.protege.owl.diff.jar"/>
 	<classpathentry kind="lib" path="LibsProtege/org.protege.owl.rdf.jar"/>
 	<classpathentry kind="lib" path="LibsProtege/org.semanticweb.HermiT.jar"/>
-	<classpathentry kind="lib" path="LibsProtege/owlapi-distribution.jar"/>
+	<classpathentry kind="lib" path="SPARQLDL/sparqldl-api.jar" sourcepath="SPARQLDL/sparqldl-api-src.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/AgileDoctor/SPARQLDL/sparqldl-api-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="OWLAPI/owlapi-distribution.jar"/>
+	<classpathentry kind="lib" path="SPARQLDL/jpaul-2.5.1.jar"/>
+	<classpathentry kind="lib" path="SPARQLDL/sparqldl-api-javadoc.jar"/>
+	<classpathentry kind="lib" path="SPARQLDL/sparqldl-api-src.jar"/>
+	<classpathentry kind="lib" path="SPARQLDL/jdom-1.1.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
