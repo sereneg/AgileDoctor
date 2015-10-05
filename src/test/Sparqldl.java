@@ -56,21 +56,36 @@ public class Sparqldl implements ITestCase {
 
 	@Override
 	public boolean test() {
-		Query query = null;
+		Query query1 = null, query2 = null, query3 = null, query4 = null;
 		QueryResult result = null;
 		try {
-			query = Query.create("SELECT * WHERE { Individual(<http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Jing>) }");
+			// select indivuduals of a class.
+			query1 = Query.create("SELECT ?x WHERE { Type(?x, <http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Child>) }");
+			// using prefix, there must be a space after the :, holy shit
+			query2 = Query.create("PREFIX ad: <http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#> "
+					+ " SELECT ?x WHERE { Type(?x, ad:Child) }");
+			// get all classes.
+			query3 = Query.create(" SELECT ?c WHERE { Class(?c) }");
+			// get all individuals.
+			query4 = Query.create(" SELECT ?i WHERE { Individual(?i) }");
 		} catch (QueryParserException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
-			result = sparqldl.execute(query);
+			result = sparqldl.execute(query1);
+			System.out.println(result.toJSON());
+			result = sparqldl.execute(query2);
+			System.out.println(result.toJSON());
+			result = sparqldl.execute(query3);
+			System.out.println(result.toJSON());
+			result = sparqldl.execute(query4);
+			System.out.println(result.toJSON());
+			
 		} catch (QueryEngineException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(result.toJSON());
 		return true;
 	}
 
