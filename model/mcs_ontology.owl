@@ -22,6 +22,92 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#doctor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#doctor">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Doctor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#InternStudent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#family -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#family">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#FamilyMember"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Patient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#intern -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#intern">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Doctor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#InternStudent"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#doctor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#age">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Participant"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Participant"/>
+        <rdfs:range rdf:resource="&xsd;Name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#sentense -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#sentense">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhrasePrimitiveType"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#sex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#sex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Participant"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +151,7 @@
     <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Answer -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Answer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase_Primitive_Type"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhrasePrimitiveType"/>
     </owl:Class>
     
 
@@ -82,6 +168,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Answer_Without_Information">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Answer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Ask_for_health_certification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Ask_for_health_certification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Reason_of_Coming"/>
     </owl:Class>
     
 
@@ -110,9 +204,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Consultation_Session -->
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#ConsultationSession -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Consultation_Session"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#ConsultationSession"/>
     
 
 
@@ -140,17 +234,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Enfant -->
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#FamilyMember -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Enfant">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Patient"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Family_member -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Family_member">
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#FamilyMember">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Participant"/>
     </owl:Class>
     
@@ -159,14 +245,14 @@
     <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Gesture -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Gesture">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhraseType"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Intern_student -->
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#InternStudent -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Intern_student">
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#InternStudent">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Participant"/>
     </owl:Class>
     
@@ -194,28 +280,28 @@
     
 
 
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase"/>
-    
-
-
     <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhraseChacter -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhraseChacter"/>
     
 
 
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase_Primitive_Type -->
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhrasePrimitiveType -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase_Primitive_Type"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhrasePrimitiveType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhraseType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhraseType"/>
     
 
 
     <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Question -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Question">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase_Primitive_Type"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhrasePrimitiveType"/>
     </owl:Class>
     
 
@@ -226,10 +312,74 @@
     
 
 
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Regular_check -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Regular_check">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Second_visit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Renew_the_prescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Renew_the_prescription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Second_visit"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase_Primitive_Type"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhrasePrimitiveType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request_to_do_something -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request_to_do_something">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request_to_express_self -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request_to_express_self">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Second_visit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Second_visit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Reason_of_Coming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Seek_for_a_cure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Seek_for_a_cure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Reason_of_Coming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Seek_for_answer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Seek_for_answer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Reason_of_Coming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Sport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Sport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Ask_for_health_certification"/>
     </owl:Class>
     
 
@@ -237,23 +387,15 @@
     <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Statement -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Statement">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase_Primitive_Type"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhrasePrimitiveType"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#To_do_something -->
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Test_report -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#To_do_something">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#To_express_self -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#To_express_self">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Request"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Test_report">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Second_visit"/>
     </owl:Class>
     
 
@@ -269,99 +411,16 @@
     <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Utterance -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Utterance">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Phrase"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#PhraseType"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#ask_for_health_certification -->
+    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Work -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#ask_for_health_certification">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Reason_of_Coming"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Work">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Ask_for_health_certification"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#regular_check -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#regular_check">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#second_visit"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#renew_the_prescription -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#renew_the_prescription">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#second_visit"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#second_visit -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#second_visit">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Reason_of_Coming"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#seek_for_a_cure -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#seek_for_a_cure">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Reason_of_Coming"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#seek_for_answer -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#seek_for_answer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Reason_of_Coming"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#sports -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#sports">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#ask_for_health_certification"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#test_report -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#test_report">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#second_visit"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#work -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#work">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#ask_for_health_certification"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Jing -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Jing">
-        <rdf:type rdf:resource="http://www.semanticweb.org/serene/ontologies/2015/IRIT/Project/AgileDoctor#Child"/>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
